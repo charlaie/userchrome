@@ -91,7 +91,7 @@ See the above repository for updates as well as full license text. */
   }
 
   #sidebar-box {
-    --uc-autohide-sidebar-delay: 600ms;
+    --uc-autohide-sidebar-delay: 200ms;
     /* Wait 0.6s before hiding sidebar */
     --uc-autohide-transition-duration: 115ms;
     --uc-autohide-transition-type: linear;
