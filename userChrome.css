@@ -1,0 +1,64 @@
+/**
+* C's Firefox CSS
+* 
+* about:config
+* - Enable userchrome.css: toolkit.legacyUserProfileCustomizations.stylesheets
+* - Enable compact ui: browser.uidensity 1
+* - Set min tab width: browser.tabs.tabMinWidth 80
+*
+* Notes:
+* #TabsToolbar: First bar with tabs, newtab, and window min/max/close.
+*     hbox .toolbar-items: Tabs and newtab container
+* #nav-bar: Second bar with back/forth, refresh, search bar, and extensions.
+* #sidebar-box: Sidebar
+* 
+* #main-window[titlepreface*="​"]: Sidebery Preface used to identify when Sidebery active
+*/
+
+/* Default: Default Titlebar Height */
+#main-window #titlebar {
+  height: 3.5em !important;
+}
+
+#main-window[uidensity="compact"] #titlebar {
+  height: 3em !important;
+}
+
+/* Default: nav-bar style needed for transition */
+#main-window #nav-bar {
+  margin-top: 0;
+  transition: margin 0.2s ease-in-out !important;
+}
+
+/* Hidden: Shift up nav-bar and make space for buttonbox */
+#main-window[titlepreface*="​"] #nav-bar {
+  padding-top: 5px !important;
+  margin-top: -3.5em;
+  margin-right: 132px;
+  margin-bottom: 0px;
+  transition: margin 0.2s ease-in-out !important;
+}
+
+#main-window[titlepreface*="​"][uidensity="compact"] #nav-bar {
+  margin-top: -3em;
+}
+
+/* Hidden: Hide tabs with opacity without changing height */
+#main-window[titlepreface*="​"][tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar>.toolbar-items {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+#sidebar-header {
+  display: none !important;
+}
+
+.container.infobar {
+  box-shadow: none !important;
+}
+
+/* Color Extension Icons */
+.unified-extensions-item .toolbarbutton-icon {
+  filter: grayscale(100%) invert(10%) sepia(23%) saturate(1000%) hue-rotate(299deg) brightness(100%) contrast(91%);
+}
