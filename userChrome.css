@@ -170,14 +170,8 @@ See the above repository for updates as well as full license text. */
   #sidebar,
   #sidebar-header {
     background-color: inherit !important;
-    border-inline: 1px solid rgb(80, 80, 80);
-    border-inline-width: 0px 1px;
   }
 
-  #sidebar-box:not([positionend], [sidebar-positionend])> :-moz-locale-dir(rtl),
-  #sidebar-box:is([positionend], [sidebar-positionend])>* {
-    border-inline-width: 1px 0px;
-  }
 
   @media -moz-pref("sidebar.revamp") {
 
